@@ -89,6 +89,7 @@ async function sendNotificationEmail({ subject, text, replyTo }) {
 // Fichiers de données
 const animatorsFile = path.join(dataDir, 'animators.json');
 const planningFile = path.join(dataDir, 'planning.json');
+const defaultDataDir = path.join(__dirname, 'default-data');
 
 function listGalleryPhotos() {
   fs.mkdirSync(photoDir, { recursive: true });
@@ -128,66 +129,30 @@ function cleanupExpiredPhotos() {
 
 // Initialiser les fichiers de données
 function initializeDataFiles() {
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
-  }
+  fs.mkdirSync(dataDir, { recursive: true });
 
-  if (!fs.existsSync(animatorsFile)) {
-    const defaultAnimators = isProduction ? [] : [
-      {
-        id: 1,
-        name: 'Sophie Martin',
-        role: 'Directrice',
-        photo: '/assets/images/placeholder-1.jpg'
-      },
-      {
-        id: 2,
-        name: 'Jean Dupont',
-        role: 'Animateur principal',
-        photo: '/assets/images/placeholder-2.jpg'
-      },
-      {
-        id: 3,
-        name: 'Marie Lefevre',
-        role: 'Animatrice',
-        photo: '/assets/images/placeholder-3.jpg'
-      },
-      {
-        id: 4,
-        name: 'Claude Bernard',
-        role: 'Animateur',
-        photo: '/assets/images/placeholder-4.jpg'
-      }
-    ];
-    fs.writeFileSync(animatorsFile, JSON.stringify(defaultAnimators, null, 2));
-  }
+  const initializeFile = (filePath, defaultFile, isEmpty) => {
+    const defaultData = JSON.parse(fs.readFileSync(defaultFile, 'utf8'));
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, JSON.stringify(defaultData, null, 2));
+      return;
+    }
 
-  if (!fs.existsSync(planningFile)) {
-    const defaultPlanning = {
-      week: isProduction ? '' : '2024-01-22',
-      activities: [
-        ...(isProduction ? [] : [
-          { day: 'Lundi', time: '9h-12h', activity: 'Ateliers créatifs' },
-          { day: 'Mardi', time: '9h-12h', activity: 'Sports et jeux collectifs' },
-          { day: 'Mercredi', time: '9h-17h', activity: 'Excursion à la nature' },
-          { day: 'Jeudi', time: '9h-12h', activity: 'Musique et danse' },
-          { day: 'Vendredi', time: '9h-12h', activity: 'Jeux d\'équipe et cohésion' }
-        ])
-      ],
-      canteenMenu: isProduction ? { week: '', days: [] } : {
-        week: 'Semaine du 19 au 23 octobre 2026',
-        days: [
-          { day: 'Lundi', date: '19 octobre', starter: 'Céleri rémoulade', main: 'Blanquette de poisson MSC', accompaniments: 'Riz, sauce', dessert: 'Yaourt' },
-          { day: 'Mardi', date: '20 octobre', starter: 'Coleslaw', main: 'Escalope de poulet', accompaniments: 'Farfalles, sauce forestière, emmental râpé', dessert: 'Fruit de saison' },
-          { day: 'Mercredi', date: '21 octobre', starter: '—', main: 'Hamburger', accompaniments: 'Pommes américaines, salade, ketchup', dessert: 'Flan vanille' },
-          { day: 'Jeudi', date: '22 octobre', starter: 'Salade de haricots verts', main: 'Volaille à la provençale', accompaniments: 'Boulgour, ratatouille', dessert: 'Yaourt brassé aux fruits' },
-          { day: 'Vendredi', date: '23 octobre', starter: '—', main: 'Pique-nique', accompaniments: 'À ramener', dessert: '—' }
-        ]
-      },
-      pedagogicProject: 'projet-pedagogique.pdf'
-    };
-    fs.writeFileSync(planningFile, JSON.stringify(defaultPlanning, null, 2));
-  }
+    if (isProduction && isEmpty(JSON.parse(fs.readFileSync(filePath, 'utf8')))) {
+      fs.writeFileSync(filePath, JSON.stringify(defaultData, null, 2));
+    }
+  };
+
+  initializeFile(
+    animatorsFile,
+    path.join(defaultDataDir, 'animators.json'),
+    animators => Array.isArray(animators) && animators.length === 0
+  );
+  initializeFile(
+    planningFile,
+    path.join(defaultDataDir, 'planning.json'),
+    planning => !planning.canteenMenu || !Array.isArray(planning.canteenMenu.days) || planning.canteenMenu.days.length === 0
+  );
 }
 
 // API Routes

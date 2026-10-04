@@ -1,0 +1,50 @@
+{
+  "week": "Semaine du 19 au 23 octobre 2026",
+  "activities": [],
+  "canteenMenu": {
+    "week": "Semaine du 19 au 23 octobre 2026",
+    "days": [
+      {
+        "day": "Lundi",
+        "date": "19 octobre",
+        "starter": "Céleri rémoulade",
+        "main": "Blanquette de poisson MSC",
+        "accompaniments": "Riz, sauce",
+        "dessert": "Yaourt"
+      },
+      {
+        "day": "Mardi",
+        "date": "20 octobre",
+        "starter": "Coleslaw",
+        "main": "Escalope de poulet",
+        "accompaniments": "Farfalles, sauce forestière, emmental râpé",
+        "dessert": "Fruit de saison"
+      },
+      {
+        "day": "Mercredi",
+        "date": "21 octobre",
+        "starter": "—",
+        "main": "Hamburger",
+        "accompaniments": "Pommes américaines, salade, ketchup",
+        "dessert": "Flan vanille"
+      },
+      {
+        "day": "Jeudi",
+        "date": "22 octobre",
+        "starter": "Salade de haricots verts",
+        "main": "Volaille à la provençale",
+        "accompaniments": "Boulgour, ratatouille",
+        "dessert": "Yaourt brassé aux fruits"
+      },
+      {
+        "day": "Vendredi",
+        "date": "23 octobre",
+        "starter": "—",
+        "main": "Pique-nique",
+        "accompaniments": "À ramener",
+        "dessert": "—"
+      }
+    ]
+  },
+  "pedagogicProject": "projet-pedagogique.pdf"
+}

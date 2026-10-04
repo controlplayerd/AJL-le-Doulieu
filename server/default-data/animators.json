@@ -1,0 +1,58 @@
+[
+  {
+    "id": 5,
+    "name": "Antoine",
+    "role": "Directeur",
+    "teamGroup": "director",
+    "photo": "images/antoine-directeur.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Mathis",
+    "role": "Animateur 3-5 ans",
+    "teamGroup": "3-5",
+    "photo": "images/mathis-anim3-6.jpeg"
+  },
+  {
+    "id": 7,
+    "name": "Julia",
+    "role": "Animateur 3-5 ans",
+    "teamGroup": "3-5",
+    "photo": "images/julia.jpeg"
+  },
+  {
+    "id": 8,
+    "name": "Charlotte",
+    "role": "Animateur 3-5 ans",
+    "teamGroup": "3-5",
+    "photo": "images/charlotte.jpeg"
+  },
+  {
+    "id": 9,
+    "name": "Anaelle",
+    "role": "Animateur 6-11 ans",
+    "teamGroup": "6-11",
+    "photo": "images/annaelle.jpeg"
+  },
+  {
+    "id": 10,
+    "name": "Noémie",
+    "role": "Animateur 6-11 ans",
+    "teamGroup": "6-11",
+    "photo": "images/noemie.jpeg"
+  },
+  {
+    "id": 11,
+    "name": "Line",
+    "role": "Animateur 6-11 ans",
+    "teamGroup": "6-11",
+    "photo": "images/line.jpeg"
+  },
+  {
+    "id": 12,
+    "name": "Anasse",
+    "role": "Animateur 6-11 ans",
+    "teamGroup": "6-11",
+    "photo": "images/anasse.jpg"
+  }
+]

@@ -26,7 +26,7 @@ Pour tester les formulaires, renseigner les variables SMTP dans `.env`. Avec Gma
 
 La galerie exige le mot de passe communiqué aux familles par un canal privé. Après authentification, son cookie est protégé (`HttpOnly`, `SameSite=Lax`, `Secure` en HTTPS) et expire après huit heures. Les sessions de galerie sont conservées en mémoire : garder une seule instance du serveur, car un redémarrage invalide les sessions.
 
-Le site ne comporte pas d’espace de connexion directeur ni de panneau d’administration. Sur un stockage neuf, le serveur crée une équipe vide et un menu/planning sans données en production : renseigner et vérifier les fichiers `animators.json` et `planning.json` dans `DATA_DIR` avant l’annonce du site. Les documents et photos se mettent à jour dans `public/` et `PHOTO_DIR` avant le déploiement.
+Le site ne comporte pas d’espace de connexion directeur ni de panneau d’administration. Au premier démarrage, le serveur copie les données publiques de `server/default-data/` dans `DATA_DIR`. En production, il restaure également ces données si les fichiers d’équipe ou de menu persistants sont vides. Les données personnalisées déjà renseignées restent conservées. Les documents et photos se mettent à jour dans `public/` et `PHOTO_DIR` avant le déploiement.
 
 ## Données et confidentialité
 

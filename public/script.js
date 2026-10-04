@@ -2,7 +2,9 @@
 async function loadAnimators() {
   try {
     const response = await fetch('/api/animators');
+    if (!response.ok) throw new Error(`Chargement de l’équipe impossible (${response.status}).`);
     const animators = await response.json();
+    if (!Array.isArray(animators) || animators.length === 0) return;
 
     const teamContainers = {
       director: document.getElementById('teamDirectorContainer'),
