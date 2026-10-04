@@ -133,6 +133,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('.close')?.addEventListener('click', closeLoginModal);
 
   const photoLightbox = document.getElementById('photoLightbox');
+  const passwordInput = document.getElementById('parentPassword');
+  const passwordVisibilityToggle = document.getElementById('passwordVisibilityToggle');
+  const passwordMascot = document.getElementById('passwordMascot');
+
+  passwordVisibilityToggle?.addEventListener('click', () => {
+    const isVisible = passwordInput.type === 'text';
+    passwordInput.type = isVisible ? 'password' : 'text';
+    passwordVisibilityToggle.setAttribute('aria-pressed', String(!isVisible));
+    passwordVisibilityToggle.setAttribute('aria-label', isVisible ? 'Afficher le mot de passe' : 'Masquer le mot de passe');
+    passwordMascot.classList.toggle('is-password-visible', !isVisible);
+    passwordInput.focus();
+  });
+
   document.getElementById('photoLightboxClose')?.addEventListener('click', () => photoLightbox.close());
   document.getElementById('photoLightboxPrevious')?.addEventListener('click', () => showPhotoAt(currentPhotoIndex - 1));
   document.getElementById('photoLightboxNext')?.addEventListener('click', () => showPhotoAt(currentPhotoIndex + 1));

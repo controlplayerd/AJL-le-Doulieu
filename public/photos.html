@@ -60,8 +60,34 @@
       </div>
       <form id="loginForm">
         <div class="form-group">
+          <div class="password-mascot" id="passwordMascot" aria-hidden="true">
+            <svg viewBox="0 0 160 112" role="presentation">
+              <path class="mascot-body" d="M22 104c2-28 24-42 58-42s56 14 58 42H22Z"/>
+              <path class="mascot-ear" d="M43 38 31 17c-2-4 2-8 6-5l20 14m50 12 19-17c3-3 8 0 6 4l-9 23"/>
+              <ellipse class="mascot-face" cx="80" cy="43" rx="43" ry="37"/>
+              <path class="mascot-cheek" d="M45 53c5 5 11 5 16 0m38 0c5 5 11 5 16 0"/>
+              <g class="mascot-eyes-open">
+                <ellipse cx="64" cy="41" rx="7" ry="10"/>
+                <ellipse cx="96" cy="41" rx="7" ry="10"/>
+                <circle cx="66" cy="38" r="2" class="mascot-eye-shine"/>
+                <circle cx="98" cy="38" r="2" class="mascot-eye-shine"/>
+              </g>
+              <g class="mascot-eyes-closed">
+                <path d="M55 42c5 7 13 7 18 0m10 0c5 7 13 7 18 0"/>
+              </g>
+              <path class="mascot-nose" d="M75 53c3-3 7-3 10 0l-5 5z"/>
+              <path class="mascot-mouth" d="M73 63c4 4 10 4 14 0"/>
+              <path class="mascot-star" d="m24 59 3 7 7 3-7 3-3 7-3-7-7-3 7-3zm111-21 2 5 5 2-5 2-2 5-2-5-5-2 5-2z"/>
+            </svg>
+          </div>
           <label for="parentPassword">Mot de passe de la galerie</label>
-          <input type="password" id="parentPassword" name="password" autocomplete="current-password" required>
+          <div class="password-input-wrap">
+            <input type="password" id="parentPassword" name="password" autocomplete="current-password" required>
+            <button class="password-visibility-toggle" id="passwordVisibilityToggle" type="button" aria-label="Afficher le mot de passe" aria-pressed="false">
+              <svg class="password-eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="password-eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.2A9.7 9.7 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.1 3.8M6.2 6.3C3.5 8.1 2 12 2 12s3.6 7 10 7a9.4 9.4 0 0 0 3.4-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+            </button>
+          </div>
         </div>
         <button type="submit" style="width: 100%;">Se connecter</button>
       </form>
