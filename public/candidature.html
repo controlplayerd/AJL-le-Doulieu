@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidature - Centre de Loisirs AJL</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">🎨 Centre de Loisirs AJL</a>
+      <nav aria-label="Navigation principale">
+          <ul class="site-nav">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="planning.html">Planning</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="candidature.html" aria-current="page">Candidater</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>🎯 Postuler en tant qu'Animateur</h1>
+      <p>Rejoignez notre équipe d'animation et contribuez à l'épanouissement des enfants !</p>
+      
+      <form id="candidatureForm">
+        <div class="form-group">
+          <label for="candidateName">Nom complet *</label>
+          <input type="text" id="candidateName" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="candidateEmail">Email *</label>
+          <input type="email" id="candidateEmail" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="candidatePhone">Téléphone</label>
+          <input type="text" id="candidatePhone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="candidateExperience">Expérience en animation *</label>
+          <textarea id="candidateExperience" name="experience" required placeholder="Décrivez votre expérience en animation, vos compétences et votre formation..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="candidateMotivation">Motivation *</label>
+          <textarea id="candidateMotivation" name="motivation" required placeholder="Pourquoi souhaitez-vous rejoindre notre centre ? Quels sont vos objectifs ?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="candidateAvailability">Disponibilité</label>
+          <textarea id="candidateAvailability" name="availability" placeholder="Précisez votre disponibilité (jours, heures, etc.)"></textarea>
+        </div>
+
+        <button type="submit" style="width: 100%;">Envoyer ma candidature</button>
+      </form>
+
+      <div id="candidatureMessage" class="alert" style="display: none; margin-top: 1rem;"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Centre de Loisirs AJL. Tous droits réservés.</p>
+    <p>Adresse : 59940 Le Doulieu | E-mail : <a href="mailto:ajlledoulieu@gmail.com">ajlledoulieu@gmail.com</a></p>
+  </footer>
+
+  <script src="candidature-script.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centre de Loisirs AJL - Accueil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">🎨 Centre de Loisirs AJL</a>
+      <nav aria-label="Navigation principale">
+          <ul class="site-nav">
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="planning.html">Planning</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="candidature.html">Candidater</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Section Bienvenue -->
+    <section class="hero">
+      <span class="hero-airplane" aria-hidden="true">✈</span>
+      <div class="hero-confetti" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <h1>✨ Bienvenue au Centre de Loisirs</h1>
+      <p>Un espace de vie, de créativité et d'épanouissement pour les enfants de 3 à 11 ans.<br>Où chaque journée est une nouvelle aventure!</p>
+      <div class="vacation-countdown" id="vacationCountdown" aria-label="Compte à rebours jusqu’aux vacances du 19 octobre 2026">
+        <p class="vacation-countdown-label">Vacances du village Gaulois dans : </p>
+        <div class="vacation-countdown-units" role="timer" aria-live="off">
+          <div class="vacation-countdown-unit"><span class="vacation-countdown-value" data-countdown-days>--</span><span class="vacation-countdown-unit-label">jours</span></div>
+          <div class="vacation-countdown-unit"><span class="vacation-countdown-value" data-countdown-hours>--</span><span class="vacation-countdown-unit-label">heures</span></div>
+          <div class="vacation-countdown-unit"><span class="vacation-countdown-value" data-countdown-minutes>--</span><span class="vacation-countdown-unit-label">minutes</span></div>
+          <div class="vacation-countdown-unit"><span class="vacation-countdown-value" data-countdown-seconds>--</span><span class="vacation-countdown-unit-label">secondes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section>
+      <h2>Notre Équipe</h2>
+      <div class="team-director-container" id="teamDirectorContainer">
+        <article class="team-member team-director">
+          <img src="images/antoine-directeur.jpg" alt="Antoine, directeur du centre de loisirs" loading="lazy" decoding="async">
+          <div class="team-member-info">
+            <h3>Antoine</h3>
+            <p>Directeur</p>
+          </div>
+        </article>
+      </div>
+      <div class="team-age-group">
+        <h3>Animateurs 3-5 ans</h3>
+        <div class="team-container" id="team35Container">
+          <article class="team-member">
+            <img src="images/mathis-anim3-6.jpeg" alt="Mathis, animateur 3-5 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Mathis</h3>
+              <p>Animateur 3-5 ans</p>
+            </div>
+          </article>
+          <article class="team-member team-member-placeholder">
+            <img src="images/julia.jpeg" alt="Julia, animateur 3-5 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Julia</h3>
+              <p>Animateur 3-5 ans</p>
+            </div>
+          </article>
+          <article class="team-member team-member-placeholder">
+            <img src="images/charlotte.jpeg" alt="Charlotte, animateur 3-5 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Charlotte</h3>
+              <p>Animateur 3-5 ans</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="team-age-group">
+        <h3>Animateurs 6-11 ans</h3>
+        <div class="team-container" id="team611Container">
+          <article class="team-member team-member-placeholder">
+            <img src="images/annaelle.jpeg" alt="Anaelle, animateur 6-11 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Anaelle</h3>
+              <p>Animateur 6-11 ans</p>
+            </div>
+          </article>
+          <article class="team-member team-member-placeholder">
+            <img src="images/noemie.jpeg" alt="Noémie, animateur 6-11 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Noémie</h3>
+              <p>Animateur 6-11 ans</p>
+            </div>
+          </article>
+          <article class="team-member team-member-placeholder">
+            <img src="images/line.jpeg" alt="Line, animateur 6-11 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Line</h3>
+              <p>Animateur 6-11 ans</p>
+            </div>
+          </article>
+          <article class="team-member team-member-placeholder">
+            <img src="images/anasse.jpg" alt="Anasse, animateur 6-11 ans" loading="lazy" decoding="async">
+            <div class="team-member-info">
+              <h3>Anasse</h3>
+              <p>Animateur 6-11 ans</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Horaires -->
+    <section>
+      <h2>Horaires d'une Journée Type</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="emoji">🌅</span>
+          <h3>Accueil échelonné du matin</h3>
+          <p><strong>8h00 – 9h00</strong></p>
+          <p>Arrivée progressive des enfants pour un démarrage en douceur de la journée.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">🎨</span>
+          <h3>Journée d'activités</h3>
+          <p><strong>9h00 – 17h00</strong></p>
+          <p>Activités, jeux, ateliers et temps calmes encadrés par l'équipe d'animation.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">🌙</span>
+          <h3>Accueil échelonné du soir</h3>
+          <p><strong>17h00 – 18h00</strong></p>
+          <p>Départ progressif des enfants selon les disponibilités des familles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Planning Détaillé -->
+    <section>
+      <h2>Une Journée Type au Centre</h2>
+      <p>Voici le déroulement d'une journée au centre, pensé pour le bien-être et le rythme des enfants.</p>
+      <div class="planning-grid day-timeline-grid">
+        <div class="planning-card">
+          <div class="time">8h00 – 9h00</div>
+          <div class="title">Garderie du matin</div>
+          <div class="description">Arrivée progressive des enfants et temps d'échange avec l'équipe.</div>
+        </div>
+        <div class="planning-card">
+          <div class="time">9h00 – 12h00</div>
+          <div class="title">Activités du matin</div>
+          <div class="description">Jeux, ateliers créatifs, activités sportives adaptées à l'âge.</div>
+        </div>
+        <div class="planning-card">
+          <div class="time">12h00 – 13h30</div>
+          <div class="title">Repas</div>
+          <div class="description">Déjeuner au centre, dans un moment convivial avec les autres enfants.</div>
+        </div>
+        <div class="planning-card">
+          <div class="time">13h30 – 14h00</div>
+          <div class="title">Temps calme</div>
+          <div class="description">Un moment de repos, de lecture ou d'activité calme pour reprendre le rythme en douceur.</div>
+        </div>
+        <div class="planning-card">
+          <div class="time">14h00 – 16h30</div>
+          <div class="title">Activités de l'après-midi</div>
+          <div class="description">Poursuite des activités avec des temps collectifs et libres.</div>
+        </div>
+        <div class="planning-card">
+          <div class="time">16h30 – 17h00</div>
+          <div class="title">Goûter</div>
+          <div class="description">Une pause gourmande pour reprendre des forces avant le départ.</div>
+        </div>
+        <div class="planning-card">
+          <div class="time">17h00 – 18h00</div>
+          <div class="title">Garderie du soir</div>
+          <div class="description">Départ progressif des enfants et échanges avec les familles.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Infos Pratiques -->
+    <section>
+      <h2>Infos Pratiques / À Savoir</h2>
+      <p>Quelques informations importantes pour bien préparer la venue de votre enfant au centre.</p>
+      <div class="info-grid practical-info-grid">
+        <div class="info-card">
+          <span class="emoji">👶</span>
+          <h3>Âges accueillis</h3>
+          <p>Le centre accueille les enfants de <strong>3 à 11 ans</strong>, répartis par groupes d'âge.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">🎒</span>
+          <h3>À prévoir</h3>
+          <p>Un sac avec gourde, casquette, vêtements de rechange et chaussures adaptées aux activités.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">🍽️</span>
+          <h3>Repas</h3>
+          <p>Les repas sont pris au centre. Merci de signaler toute allergie ou régime alimentaire.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">☀️</span>
+          <h3>Sorties & activités</h3>
+          <p>Des sorties peuvent être organisées. Les familles sont toujours informées à l'avance.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">🧑‍🤝‍🧑</span>
+          <h3>Groupes & encadrement</h3>
+          <p>Les enfants sont répartis par âge avec un encadrement adapté et bienveillant.</p>
+        </div>
+        <div class="info-card">
+          <span class="emoji">❤️</span>
+          <h3>Bien-être & sécurité</h3>
+          <p>Le respect du rythme de l'enfant et sa sécurité sont au cœur de nos priorités.</p>
+        </div>
+      </div>
+      <div class="holiday-calendar" aria-labelledby="holiday-calendar-title">
+        <h3 id="holiday-calendar-title">Calendrier des centres de loisirs AJL</h3>
+        <p>Retrouvez les dates des prochaines périodes d’accueil.</p>
+        <div class="holiday-calendar-grid">
+          <article class="holiday-period">
+            <span class="holiday-period-season">Toussaint</span>
+            <p class="holiday-period-dates">
+              <span class="holiday-period-prefix">Du</span>
+              <span class="holiday-period-range">19 <span>au</span> 23</span>
+              <span class="holiday-period-month">octobre <span>2026</span></span>
+            </p>
+          </article>
+          <article class="holiday-period">
+            <span class="holiday-period-season">Noël</span>
+            <p class="holiday-period-dates">
+              <span class="holiday-period-prefix">Du</span>
+              <span class="holiday-period-range">21 <span>au</span> 25</span>
+              <span class="holiday-period-month">décembre <span>2026</span></span>
+            </p>
+          </article>
+          <article class="holiday-period">
+            <span class="holiday-period-season">Hiver</span>
+            <p class="holiday-period-dates">
+              <span class="holiday-period-prefix">Du</span>
+              <span class="holiday-period-range">15 <span>au</span> 19</span>
+              <span class="holiday-period-month">février <span>2027</span></span>
+            </p>
+          </article>
+          <article class="holiday-period">
+            <span class="holiday-period-season">Printemps</span>
+            <p class="holiday-period-dates">
+              <span class="holiday-period-prefix">Du</span>
+              <span class="holiday-period-range">12 <span>au</span> 16</span>
+              <span class="holiday-period-month">avril <span>2027</span></span>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section>
+      <h2>Nous Contacter</h2>
+      <p>Vous avez des questions ? N'hésitez pas à nous envoyer un message.</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="contactName">Nom</label>
+          <input type="text" id="contactName" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" required></textarea>
+        </div>
+        <button type="submit">Envoyer le message</button>
+      </form>
+      <div id="contactFeedback" class="alert" style="display: none;"></div>
+    </section>
+  </main>
+
+  <button class="gift-trigger" id="giftTrigger" type="button" aria-label="Ouvrir le petit cadeau de l’équipe" aria-haspopup="dialog" aria-controls="animationTeamGift">🎁</button>
+  <dialog class="gift-dialog" id="animationTeamGift" aria-labelledby="giftDialogTitle">
+    <div class="gift-dialog-content">
+      <button class="gift-dialog-close" type="button" aria-label="Fermer">&times;</button>
+      <p class="gift-dialog-kicker">Un petit cadeau de l’équipe</p>
+      <h2 id="giftDialogTitle">Une belle aventure ensemble</h2>
+      <img class="gift-team-photo" src="images/photo%20groupe.jpg" alt="Photo de l’équipe d’animation du Centre de Loisirs AJL" loading="lazy" decoding="async">
+      <p class="gift-dialog-message">Toute l’équipe vous attend avec impatience pour partager de nouvelles aventures, des jeux et plein de sourires !</p>
+    </div>
+  </dialog>
+  <footer>
+    <p>&copy; 2026 Centre de Loisirs AJL. Tous droits réservés.</p>
+    <p>Adresse : 59940 Le Doulieu | E-mail : <a href="mailto:ajlledoulieu@gmail.com">ajlledoulieu@gmail.com</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

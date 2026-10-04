@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos - Centre de Loisirs AJL</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">🎨 Centre de Loisirs AJL</a>
+      <nav aria-label="Navigation principale">
+          <ul class="site-nav">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="planning.html">Planning</a></li>
+          <li><a href="photos.html" aria-current="page">Photos</a></li>
+          <li><a href="candidature.html">Candidater</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>📸 Galerie Photos</h1>
+      <p>Découvrez les moments de vie et d'activités au centre de loisirs.</p>
+      
+      <div id="loginPrompt" class="access-panel">
+        <p>Pour accéder à la galerie photos, entrez le mot de passe transmis par le centre.</p>
+        <button onclick="openLoginModal()" class="btn-secondary">Accéder à la galerie</button>
+      </div>
+
+      <div id="photoGallery" style="display: none;">
+        <div id="childInfo" class="child-info"></div>
+        <div class="photo-gallery" id="photosContainer"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="photo-lightbox" id="photoLightbox" aria-label="Photo agrandie">
+    <button class="photo-lightbox-close" id="photoLightboxClose" type="button" aria-label="Fermer la photo agrandie">&times;</button>
+    <button class="photo-lightbox-nav photo-lightbox-previous" id="photoLightboxPrevious" type="button" aria-label="Photo précédente" title="Photo précédente">&lsaquo;</button>
+    <img id="photoLightboxImage" alt="">
+    <button class="photo-lightbox-nav photo-lightbox-next" id="photoLightboxNext" type="button" aria-label="Photo suivante" title="Photo suivante">&rsaquo;</button>
+    <p class="photo-lightbox-caption" id="photoLightboxCaption" aria-live="polite"></p>
+  </dialog>
+
+  <!-- Modal de Connexion -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="loginTitle">Accès à la galerie</h2>
+        <button class="close" onclick="closeLoginModal()">&times;</button>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="parentPassword">Mot de passe de la galerie</label>
+          <input type="password" id="parentPassword" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" style="width: 100%;">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Centre de Loisirs AJL. Tous droits réservés.</p>
+    <p>Adresse : 59940 Le Doulieu | E-mail : <a href="mailto:ajlledoulieu@gmail.com">ajlledoulieu@gmail.com</a></p>
+  </footer>
+
+  <script src="photos-script.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

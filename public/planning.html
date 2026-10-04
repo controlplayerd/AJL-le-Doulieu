@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planning - Centre de Loisirs AJL</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <a href="index.html" class="logo">🎨 Centre de Loisirs AJL</a>
+      <nav aria-label="Navigation principale">
+          <ul class="site-nav">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="planning.html" aria-current="page">Planning</a></li>
+          <li><a href="photos.html">Photos</a></li>
+          <li><a href="candidature.html">Candidater</a></li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>📅 Menu </h1>
+      
+      <div id="planningContent">
+        <div class="planning-viewer canteen-menu-viewer" id="menuViewer" aria-labelledby="menuViewerTitle">
+          <div class="planning-viewer-header">
+            <div>
+              <p class="viewer-kicker" id="menuWeekLabel"></p>
+              <h2 id="menuViewerTitle">Le menu de la cantine</h2>
+            </div>
+          </div>
+          <div class="menu-day-filters" id="menuDayFilters" role="group" aria-label="Filtrer le menu par jour"></div>
+          <div class="menu-table-wrap" role="region" aria-labelledby="menuViewerTitle" tabindex="0">
+            <table class="menu-table">
+              <thead>
+                <tr>
+                  <th scope="col">Jour</th>
+                  <th scope="col">Entrée</th>
+                  <th scope="col">Plat</th>
+                  <th scope="col">Accompagnements</th>
+                  <th scope="col">Dessert</th>
+                </tr>
+              </thead>
+              <tbody id="menuTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="planning-viewer document-viewer activity-planning-viewer" aria-labelledby="planningViewerTitle">
+          <div class="planning-viewer-header">
+            <div>
+              <p class="viewer-kicker">À consulter en ligne</p>
+              <h2 id="planningViewerTitle">Le planning des activités</h2>
+            </div>
+            <div class="viewer-actions">
+              <a href="documents/planning-ajl.pdf" class="btn-download" download="planning-ajl.pdf">Télécharger le planning</a>
+              <a href="documents/planning-ajl.pdf" class="btn-secondary" target="_blank" rel="noopener">Ouvrir le planning</a>
+            </div>
+          </div>
+          <iframe src="documents/planning-ajl.pdf#view=FitH" title="Planning des activités du centre de loisirs" class="planning-pdf" loading="lazy">
+            <p>Votre navigateur ne peut pas afficher ce document. <a href="documents/planning-ajl.pdf" target="_blank" rel="noopener">Ouvrir le planning PDF</a>.</p>
+          </iframe>
+        </div>
+        <div class="planning-viewer document-viewer pedagogical-project-viewer" id="projectViewer" aria-labelledby="projectViewerTitle">
+          <div class="planning-viewer-header">
+            <div>
+              <p class="viewer-kicker">À consulter en ligne</p>
+              <h2 id="projectViewerTitle">Le projet pédagogique</h2>
+            </div>
+            <div class="viewer-actions">
+              <a href="documents/projet-pedagogique.pdf" class="btn-download" download="projet-pedagogique.pdf">Télécharger le projet</a>
+              <a href="documents/projet-pedagogique.pdf" class="btn-secondary" target="_blank" rel="noopener">Ouvrir le projet</a>
+            </div>
+          </div>
+          <iframe src="documents/projet-pedagogique.pdf#view=FitH" title="Projet pédagogique du centre de loisirs" class="planning-pdf" loading="lazy">
+            <p>Votre navigateur ne peut pas afficher ce document. <a href="documents/projet-pedagogique.pdf" target="_blank" rel="noopener">Ouvrir le projet pédagogique</a>.</p>
+          </iframe>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Centre de Loisirs AJL. Tous droits réservés.</p>
+    <p>Adresse : 59940 Le Doulieu | E-mail : <a href="mailto:ajlledoulieu@gmail.com">ajlledoulieu@gmail.com</a></p>
+  </footer>
+
+  <script src="planning-script.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>
