@@ -718,11 +718,12 @@ form button { display: flex; margin-right: auto; margin-left: auto; }
 .mascot-eye-shine { fill: #fff; }
 .mascot-eyes-closed { display: block; fill: none; stroke: #352b47; stroke-linecap: round; stroke-width: 4; }
 .mascot-eyes-open { display: none; }
+.password-mascot.is-password-visible .mascot-eyes-open { transform-box: fill-box; transform-origin: center; }
 .mascot-nose { fill: #e55f94; }
 .mascot-mouth { fill: none; stroke: #553b7c; stroke-linecap: round; stroke-width: 2.5; }
 .mascot-star { fill: #ffc09b; }
 .password-mascot.is-password-visible .mascot-eyes-closed { display: none; }
-.password-mascot.is-password-visible .mascot-eyes-open { display: block; animation: mascot-eyes-open 220ms ease-out both; }
+.password-mascot.is-password-visible .mascot-eyes-open { display: block; animation: mascot-eyes-open 620ms cubic-bezier(.2, .8, .2, 1) both; }
 .password-input-wrap { position: relative; }
 .password-input-wrap input[type="password"], .password-input-wrap input[type="text"] { padding-right: 3.4rem; }
 .password-visibility-toggle { position: absolute; top: 50%; right: .4rem; display: grid; width: 40px; min-height: 40px; padding: .5rem; place-items: center; transform: translateY(-50%); border-radius: 9px; color: var(--blue-dark); background: var(--sky-pale); box-shadow: none; }
@@ -734,8 +735,12 @@ form button { display: flex; margin-right: auto; margin-left: auto; }
 .password-visibility-toggle[aria-pressed="true"] .password-eye-open { display: none; }
 .password-visibility-toggle[aria-pressed="true"] .password-eye-closed { display: block; }
 @keyframes mascot-eyes-open {
-  from { transform: scaleY(.2); opacity: .5; }
-  to { transform: scaleY(1); opacity: 1; }
+  0% { transform: scaleY(.08); opacity: 0; }
+  34% { transform: scaleY(1.12); opacity: 1; }
+  48% { transform: scaleY(1); }
+  66% { transform: scaleY(.12); }
+  80% { transform: scaleY(1.08); }
+  100% { transform: scaleY(1); }
 }
 .close { display: grid; width: 38px; min-height: 38px; padding: 0; place-items: center; border-radius: 50%; color: var(--blue-dark); background: var(--sky-pale); box-shadow: none; font-size: 1.8rem; font-weight: 400; line-height: 1; }
 .close:hover { color: #fff; background: var(--coral); transform: rotate(90deg); }
