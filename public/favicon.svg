@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#533b7a"/>
+      <stop offset="1" stop-color="#8156a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#background)"/>
+  <path d="M14 20 18 12l6 6 8-3 2 8-5 7-9 1-7-5z" fill="#ffd447"/>
+  <circle cx="18" cy="22" r="2.5" fill="#ff668d"/>
+  <circle cx="25" cy="20" r="2.5" fill="#43d6c2"/>
+  <path d="m47 13 1.7 4.3L53 19l-4.3 1.7L47 25l-1.7-4.3L41 19l4.3-1.7z" fill="#fff"/>
+  <text x="32" y="49" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800" letter-spacing="-.8" text-anchor="middle">AJL</text>
+  <circle cx="52" cy="43" r="3" fill="#ff9d72"/>
+</svg>
