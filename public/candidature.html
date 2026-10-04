@@ -11,7 +11,11 @@
   <header>
     <div class="header-content">
       <a href="index.html" class="logo">🎨 Centre de Loisirs AJL</a>
-      <nav aria-label="Navigation principale">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNavigation">
+        <span class="nav-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>Menu</span>
+      </button>
+      <nav id="siteNavigation" aria-label="Navigation principale">
           <ul class="site-nav">
           <li><a href="index.html">Accueil</a></li>
           <li><a href="planning.html">Planning</a></li>
@@ -71,6 +75,7 @@
     <p>Adresse : 59940 Le Doulieu | E-mail : <a href="mailto:ajlledoulieu@gmail.com">ajlledoulieu@gmail.com</a></p>
   </footer>
 
+  <script src="navigation.js"></script>
   <script src="candidature-script.js"></script>
   <script src="motion.js"></script>
 </body>

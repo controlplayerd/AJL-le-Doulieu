@@ -108,6 +108,7 @@ header::after {
 }
 .logo:hover { color: var(--yellow); animation: logo-wiggle 560ms cubic-bezier(.36, .07, .19, .97); }
 .header-content nav { justify-self: center; }
+.nav-toggle { display: none; }
 .site-nav {
   display: flex;
   align-items: center;
@@ -972,11 +973,21 @@ main > section.scroll-reveal.is-revealed h2::after { animation: underline-draw 7
 }
 @media (max-width: 640px) {
   main > section { min-height: 100svh; padding: 4rem 1.25rem; }
-  .header-content { width: min(100% - 1rem, 1240px); }
+  .header-content { display: grid; width: min(100% - 1rem, 1240px); min-height: 64px; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem .65rem; }
   .logo { max-width: 100%; overflow: hidden; font-size: 1.05rem; text-overflow: ellipsis; }
-  .site-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .28rem; padding: .35rem; }
-  .site-nav a { display: flex; min-height: 44px; align-items: center; justify-content: center; gap: .35rem; padding: .55rem .4rem; font-size: .84rem; }
-  .site-nav a::before { display: inline-block; margin: 0; font-size: .9rem; }
+  .nav-toggle { display: inline-flex; min-height: 42px; align-items: center; justify-content: center; gap: .55rem; padding: .5rem .85rem; border: 1px solid rgba(255, 255, 255, .35); border-radius: 999px; color: #fff; background: rgba(34, 21, 65, .35); box-shadow: none; font-size: .88rem; font-weight: 800; }
+  .nav-toggle:hover, .nav-toggle[aria-expanded="true"] { color: var(--blue-dark); background: var(--yellow); }
+  .nav-toggle-icon { display: grid; width: 17px; gap: 4px; }
+  .nav-toggle-icon span { display: block; height: 2px; border-radius: 2px; background: currentColor; transition: transform 180ms ease, opacity 180ms ease; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-icon span:first-child { transform: translateY(6px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-icon span:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-icon span:last-child { transform: translateY(-6px) rotate(-45deg); }
+  .header-content nav { display: none; grid-column: 1 / -1; order: initial; flex: initial; width: 100%; padding: 0 0 .6rem; }
+  .header-content nav.is-open { display: block; }
+  .site-nav { display: grid; grid-template-columns: minmax(0, 1fr); gap: .35rem; padding: .45rem; border-radius: 16px; }
+  .site-nav a { display: flex; min-height: 46px; align-items: center; padding: .7rem .9rem; font-size: .95rem; }
+  .site-nav a::before { display: none; }
+  .site-nav a::after { right: .9rem; left: .9rem; }
   .hero { min-height: 100svh; }
   .hero::after { right: 4%; bottom: 8%; max-width: 180px; font-size: .75rem; text-align: right; }
   .scroll-progress-rail { top: 118px; right: 10px; bottom: 76px; }
