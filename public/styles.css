@@ -650,6 +650,17 @@ form button { display: flex; margin-right: auto; margin-left: auto; }
 .pedagogical-project-viewer { border-top-color: var(--sky); }
 .activity-planning-viewer .planning-pdf { height: clamp(28rem, 72svh, 50rem); }
 .pedagogical-project-viewer .planning-pdf { height: clamp(34rem, 82svh, 58rem); }
+.document-mobile-note { display: none; }
+@media (max-width: 760px), (max-height: 620px) {
+  .document-viewer .planning-pdf { display: none; }
+  .document-mobile-note { display: flex; align-items: center; gap: .85rem; margin-top: .25rem; padding: .85rem; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(125deg, var(--sky-pale), #fff); }
+  .document-mobile-icon { display: grid; width: 2.8rem; height: 2.8rem; flex: 0 0 auto; place-items: center; border-radius: 12px; background: #fff; font-size: 1.4rem; box-shadow: var(--shadow-sm); }
+  .document-mobile-note p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+  .document-viewer .planning-viewer-header { gap: .8rem; }
+  .document-viewer .planning-viewer-header .viewer-actions { gap: .55rem; }
+  .document-viewer .planning-viewer-header .viewer-actions > a { min-height: 48px; }
+  .document-viewer .planning-viewer-header .viewer-actions > .btn-secondary { order: -1; }
+}
 
 /* Messages, modale et pied de page */
 .alert { margin-top: 1rem; padding: .9rem 1rem; border-radius: 12px; font-weight: 800; }
