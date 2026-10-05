@@ -520,6 +520,8 @@ form {
   text-align: left;
 }
 .form-group { margin-bottom: 1.15rem; }
+.login-error { display: flex; align-items: flex-start; gap: .55rem; margin: .65rem 0 0; padding: .7rem .8rem; border: 1px solid #f1b7c1; border-radius: 11px; color: #9d344a; background: #fff3f4; font-size: .88rem; font-weight: 700; line-height: 1.4; }
+.login-error[hidden] { display: none; }
 label { display: block; margin-bottom: .42rem; color: var(--blue-dark); font-size: .92rem; font-weight: 900; transform-origin: left center; transition: color 180ms ease, transform 180ms ease; }
 input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="file"], textarea, select {
   width: 100%;
@@ -535,6 +537,8 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 input[type="file"] { padding: .57rem; }
 textarea { min-height: 130px; resize: vertical; }
 input:focus, textarea:focus, select:focus { border-color: var(--sky); box-shadow: 0 0 0 4px rgba(167, 139, 250, .22); }
+input[aria-invalid="true"] { border-color: #c94f65; }
+input[aria-invalid="true"]:focus { box-shadow: 0 0 0 4px rgba(201, 79, 101, .16); }
 .form-group:focus-within > label { color: var(--coral); transform: translateX(5px) rotate(-1deg); }
 form button { display: flex; margin-right: auto; margin-left: auto; }
 

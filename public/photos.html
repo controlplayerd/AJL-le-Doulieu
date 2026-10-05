@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photos - Centre de Loisirs AJL</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="styles.css?v=gallery-password-2">
+  <link rel="stylesheet" href="styles.css?v=gallery-password-3">
 </head>
 <body>
   <header>
@@ -84,12 +84,13 @@
           </div>
           <label for="parentPassword">Mot de passe de la galerie</label>
           <div class="password-input-wrap">
-            <input type="password" id="parentPassword" name="password" autocomplete="current-password" required>
+            <input type="password" id="parentPassword" name="password" autocomplete="current-password" aria-describedby="loginError" required>
             <button class="password-visibility-toggle" id="passwordVisibilityToggle" type="button" aria-label="Afficher le mot de passe" aria-pressed="false">
               <svg class="password-eye-open" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
               <svg class="password-eye-closed" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.2A9.7 9.7 0 0 1 12 5c6.4 0 10 7 10 7a16.6 16.6 0 0 1-3.1 3.8M6.2 6.3C3.5 8.1 2 12 2 12s3.6 7 10 7a9.4 9.4 0 0 0 3.4-.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
             </button>
           </div>
+          <p class="login-error" id="loginError" role="alert" hidden></p>
         </div>
         <button type="submit" style="width: 100%;">Se connecter</button>
       </form>

@@ -94,18 +94,40 @@ function openLoginModal() {
   const modal = document.getElementById('loginModal');
   const loginForm = document.getElementById('loginForm');
 
+  clearLoginError();
   modal.classList.add('active');
   document.getElementById('parentPassword').focus();
   loginForm.onsubmit = handleLogin;
 }
 
 function closeLoginModal() {
+  clearLoginError();
   document.getElementById('loginModal').classList.remove('active');
+}
+
+function showLoginError(message) {
+  const passwordInput = document.getElementById('parentPassword');
+  const errorMessage = document.getElementById('loginError');
+
+  errorMessage.textContent = message;
+  errorMessage.hidden = false;
+  passwordInput.setAttribute('aria-invalid', 'true');
+}
+
+function clearLoginError() {
+  const passwordInput = document.getElementById('parentPassword');
+  const errorMessage = document.getElementById('loginError');
+
+  if (!passwordInput || !errorMessage) return;
+  errorMessage.textContent = '';
+  errorMessage.hidden = true;
+  passwordInput.removeAttribute('aria-invalid');
 }
 
 async function handleLogin(event) {
   event.preventDefault();
   const password = document.getElementById('parentPassword').value;
+  clearLoginError();
 
   try {
     const response = await fetch('/api/photos/login', {
@@ -116,7 +138,7 @@ async function handleLogin(event) {
     const data = await response.json();
 
     if (!data.success) {
-      alert(`Connexion échouée : ${data.message}`);
+      showLoginError(data.message || 'Mot de passe incorrect. Vérifiez votre saisie et réessayez.');
       return;
     }
 
@@ -124,7 +146,7 @@ async function handleLogin(event) {
     closeLoginModal();
     loadPhotos();
   } catch {
-    alert('La connexion à la galerie est indisponible.');
+    showLoginError('La connexion à la galerie est momentanément indisponible. Réessayez dans quelques instants.');
   }
 }
 
@@ -136,6 +158,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const passwordInput = document.getElementById('parentPassword');
   const passwordVisibilityToggle = document.getElementById('passwordVisibilityToggle');
   const passwordMascot = document.getElementById('passwordMascot');
+
+  passwordInput?.addEventListener('input', clearLoginError);
 
   passwordVisibilityToggle?.addEventListener('click', () => {
     const isVisible = passwordInput.type === 'text';
